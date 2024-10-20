@@ -3,22 +3,22 @@ package org.example;
 import static java.lang.Integer.reverse;
 
 public class Main {
+    public static void main(String[] args) {}
+        public static boolean isPalindrome ( int number){
+            int originalNumber = Math.abs(number);
+            int reversedNumber = 0;
+            int temp = originalNumber;
 
-    public static boolean isPalindrome(int number) {
-        int originalNumber = Math.abs(number);
-        int reversedNumber = 0;
-        int temp = originalNumber;
+            // Sayıyı ters çevirme işlemi
+            while (temp > 0) {
+                int lastDigit = temp % 10; // Son basamağı alıyoruz
+                reversedNumber = (reversedNumber * 10) + lastDigit; // Sayıyı ters çeviriyoruz
+                temp /= 10; // Bir basamak küçültüyoruz
+            }
 
-        // Sayıyı ters çevirme işlemi
-        while (temp > 0) {
-            int lastDigit = temp % 10; // Son basamağı alıyoruz
-            reversedNumber = (reversedNumber * 10) + lastDigit; // Sayıyı ters çeviriyoruz
-            temp /= 10; // Bir basamak küçültüyoruz
+            // Ters çevrilmiş sayıyla orijinal sayıyı karşılaştırıyoruz
+            return originalNumber == reversedNumber;
         }
-
-        // Ters çevrilmiş sayıyla orijinal sayıyı karşılaştırıyoruz
-        return originalNumber == reversedNumber;
-    }
 
 
     public static boolean isPerfectNumber(int number) {
